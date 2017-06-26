@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p> 
+<div class ="container">
+
+      <% @posts.each do |post| %>
+        <div class = "row">
+          <div class = "post-border">
+          <div class = col-md-4>
+        <p><%=image_tag(post.image_url , width: "103%", height: "25%")%></p>
+        </div>
+          <div class = "col-md-6">
+        <p class = "post-title"><%= post.title %></p>
+        <p class = "post-summary"><%= post.summary %></p>
+        <p class "post-resource_type"><%= post.resource_type %></p>
+        <p class = "post-user"><%= post.user %></p>
+        <p class = "post-date"><%= post.created_at.strftime("%b %d %y") %></p>
+        </div>
+        <div class = "col-md-2 post-show">
+        <p><%= link_to 'Show', post %></p>
+        <p><%= link_to 'Edit', edit_post_path(post) %></p>
+        <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+          </div>
+            </div>
+      <% end %>
+ 
+
+<br>
+
+<%= link_to "Add Post", new_post_path(subject_id: @subject.id), class:'btn btn-primary' %> 
+</div>

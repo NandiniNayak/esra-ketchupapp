@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <p class = "post-title">
+  <%= @post.title %>
+</p>
+
+<p>
+  <p class = "post-summary">
+  <%= @post.summary %>
+</p>
+
+<p>
+  <p class = "post-resource"
+  <strong>Resource type:</strong>
+  <%= @post.resource_type %>
+</p>
+
+<p>
+  <p class = "post-link"
+  <strong>Some useful links</strong>
+  <%= @post.file_url %>
+</p>
+
+
+
+<p class = "post-user">
+  <strong>Posted by:</strong>
+  <%= @post.user %>
+</p>
+
+<p class ="post-img">
+  <%= image_tag(@post.image_url) %>
+</p>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
